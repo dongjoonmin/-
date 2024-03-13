@@ -683,21 +683,6 @@
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
-function checkForDevTools() {
-    // 개발자 도구 패널 요소
-    var devTools = document.getElementById('dev-tools');
-    
-    // 개발자 도구 패널이 존재하고 display 속성이 'block'이 아닌 경우 (패널이 숨겨진 경우)
-    if (devTools && window.getComputedStyle(devTools).display !== 'block') {
-        alert("개발자 도구를 오픈하셨습니다. 핏타민의 저작권을 보호해주세요.");
-        // 패널을 다시 표시하여 숨기기를 방지
-        devTools.style.display = 'block';
-    }
-}
-
-// 일정 간격으로 checkForDevTools 함수 실행
-setInterval(checkForDevTools, 1000);
-
     
 </script>
   
