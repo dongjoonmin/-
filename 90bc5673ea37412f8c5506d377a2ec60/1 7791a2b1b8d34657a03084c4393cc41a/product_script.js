@@ -14,33 +14,32 @@ document.querySelectorAll('.image img').forEach(function(image) {
 });
 
 // 개발자 도구 감지
-function detectDevTool(allow) {
-    if (isNaN(+allow)) allow = 100;
-    var start = +new Date();
-    var end = +new Date();
-    if (isNaN(start) || isNaN(end) || end - start > allow) {
-        alert("DEVTOOLS detected. All operations will be terminated.");
-        // 여기서 추가 작업을 수행하거나 종료할 수 있습니다.
-    }
-}
-
-function setupDevToolDetection() {
-    if (window.attachEvent) {
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            detectDevTool();
-        } else {
-            window.attachEvent('onresize', detectDevTool);
-            window.attachEvent('onmousemove', detectDevTool);
-            window.attachEvent('onfocus', detectDevTool);
-            window.attachEvent('onblur', detectDevTool);
+    ! function() {
+        function detectDevTool(allow) {
+            if (isNaN(+allow)) allow = 100;
+            var start = +new Date();
+            debugger;
+            var end = +new Date();
+            if (isNaN(start) || isNaN(end) || end - start > allow) {
+                // 개발자 도구가 open 된것을 감지했을때 실행할 코드 삽입
+                document.location.href = "https://www.tistory.com/"
+            }
         }
-    } else {
-        window.addEventListener('load', detectDevTool);
-        window.addEventListener('resize', detectDevTool);
-        window.addEventListener('mousemove', detectDevTool);
-        window.addEventListener('focus', detectDevTool);
-        window.addEventListener('blur', detectDevTool);
-    }
-}
-
-setupDevToolDetection();
+        if (window.attachEvent) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                detectDevTool();
+                window.attachEvent('onresize', detectDevTool);
+                window.attachEvent('onmousemove', detectDevTool);
+                window.attachEvent('onfocus', detectDevTool);
+                window.attachEvent('onblur', detectDevTool);
+            } else {
+                setTimeout(argument.callee, 0);
+            }
+        } else {
+            window.addEventListener('load', detectDevTool);
+            window.addEventListener('resize', detectDevTool);
+            window.addEventListener('mousemove', detectDevTool);
+            window.addEventListener('focus', detectDevTool);
+            window.addEventListener('blur', detectDevTool);
+        }
+    }(); 
