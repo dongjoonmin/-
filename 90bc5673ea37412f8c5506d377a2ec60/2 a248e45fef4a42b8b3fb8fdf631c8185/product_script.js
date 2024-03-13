@@ -22,7 +22,7 @@ document.querySelectorAll('.image img').forEach(function(image) {
             var end = +new Date();
             if (isNaN(start) || isNaN(end) || end - start > allow) {
                 // 개발자 도구가 open 된것을 감지했을때 실행할 코드 삽입
-                document.location.href = "https://www.tistory.com/"
+                document.location.href = "https://fitamin.kr"
             }
         }
         if (window.attachEvent) {
