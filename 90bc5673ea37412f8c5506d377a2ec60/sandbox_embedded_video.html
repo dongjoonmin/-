@@ -8,10 +8,7 @@
     box-sizing: border-box;
     -webkit-print-color-adjust: exact;
   }
-  
-  #dev-tools {
-    display: none;
-  }  
+
   html,
   body {
     margin: 0;
@@ -685,30 +682,7 @@
   <script>
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-          // 개발자 도구 패널을 열 때마다 실행되는 함수
-          function checkForDevTools() {
-              // 개발자 도구 패널 요소
-              var devTools = document.getElementById('dev-tools');
-              
-              // 개발자 도구 패널이 존재하고 display 속성이 'block'이 아닌 경우 (패널이 숨겨진 경우)
-              if (devTools && window.getComputedStyle(devTools).display !== 'block') {
-                  alert("핏타민의 저작권을 보호해주세요.");
-                  // 패널을 다시 표시하여 숨기기를 방지
-                  devTools.style.display = 'block';
-              }
-          
-              // 개발자 도구를 감지하고 콘솔을 비활성화
-              if (window.console && window.console.log) {
-                  var devtools = /./;
-                  devtools.toString = function() {
-                      this.log();
-                      return '';
-                  };
-                  console.log('%c', devtools);
-              }
-          }
-
-        setInterval(checkForDevTools, 1000);
+        
 </script>
   
   </div></article></body></html>
