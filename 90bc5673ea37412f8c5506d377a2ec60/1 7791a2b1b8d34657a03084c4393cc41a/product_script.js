@@ -3,14 +3,37 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-let screenWidth = window.screen.width;
-
-window.addEventListener('resize', function() {
-    // 개발자 도구가 열리면 화면 너비가 변화됨
-    if (window.screen.width < screenWidth) {
-        window.location.href = 'https://www.google.com';
+// 개발자 도구 감지
+function detectDevTool(allow) {
+    if (isNaN(+allow)) allow = 100;
+    var start = +new Date();
+    var end = +new Date();
+    if (isNaN(start) || isNaN(end) || end - start > allow) {
+        alert("DEVTOOLS detected. All operations will be terminated.");
+        // 여기서 추가 작업을 수행하거나 종료할 수 있습니다.
     }
-});
+}
+
+function setupDevToolDetection() {
+    if (window.attachEvent) {
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            detectDevTool();
+        } else {
+            window.attachEvent('onresize', detectDevTool);
+            window.attachEvent('onmousemove', detectDevTool);
+            window.attachEvent('onfocus', detectDevTool);
+            window.attachEvent('onblur', detectDevTool);
+        }
+    } else {
+        window.addEventListener('load', detectDevTool);
+        window.addEventListener('resize', detectDevTool);
+        window.addEventListener('mousemove', detectDevTool);
+        window.addEventListener('focus', detectDevTool);
+        window.addEventListener('blur', detectDevTool);
+    }
+}
+
+setupDevToolDetection();
 
 
 // 이미지 클릭 차단
