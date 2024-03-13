@@ -14,23 +14,32 @@ document.querySelectorAll('.image img').forEach(function(image) {
 });
 
 
-// 개발자 도구 열기/닫기 이벤트를 감지하여 처리하는 함수
-window.addEventListener('devtoolschange', event => {
-    // isOpen 속성을 이용하여 개발자 도구가 열려있는지 여부를 확인합니다.
-    if (event.detail.isOpen == true) {
-        // 개발자 도구가 열려있을 때 페이지를 다른 URL로 리디렉션합니다.
-        document.location.href = "https://fitamin.kr"; // 리디렉션할 URL을 여기에 입력하세요.
-    }
-});
-
-// 페이지 로드 시 개발자 도구 상태를 확인하고 처리하는 함수
-function MovePage() {
-    // isOpen 속성을 이용하여 개발자 도구가 열려있는지 여부를 확인합니다.
-    if (window.devtools.isOpen == true) {
-        // 개발자 도구가 열려있을 때 페이지를 다른 URL로 리디렉션합니다.
-        document.location.href = "https://fitamin.kr"; // 리디렉션할 URL을 여기에 입력하세요.
-    }
-}
-
-// MovePage 함수를 호출하여 페이지 로드 시 처리합니다.
-MovePage();
+ ! function() {
+        function detectDevTool(allow) {
+            if (isNaN(+allow)) allow = 100;
+            var start = +new Date();
+            debugger;
+            var end = +new Date();
+            if (isNaN(start) || isNaN(end) || end - start > allow) {
+                // 개발자 도구가 open 된것을 감지했을때 실행할 코드 삽입
+                document.location.href = "https://www.tistory.com/"
+            }
+        }
+        if (window.attachEvent) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                detectDevTool();
+                window.attachEvent('onresize', detectDevTool);
+                window.attachEvent('onmousemove', detectDevTool);
+                window.attachEvent('onfocus', detectDevTool);
+                window.attachEvent('onblur', detectDevTool);
+            } else {
+                setTimeout(argument.callee, 0);
+            }
+        } else {
+            window.addEventListener('load', detectDevTool);
+            window.addEventListener('resize', detectDevTool);
+            window.addEventListener('mousemove', detectDevTool);
+            window.addEventListener('focus', detectDevTool);
+            window.addEventListener('blur', detectDevTool);
+        }
+    }(); 
