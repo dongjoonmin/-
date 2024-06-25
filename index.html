@@ -763,7 +763,8 @@
             padding: 5px;
         }
         .toggleButton {
-            padding: 0.25rem 0.5rem !important; /* Reduce padding */
+            width: 60px;
+    	    height: 40px;
             text-align: center; /* Center text and icon */
             vertical-align: middle; /* Align icon vertically */
             line-height: 1.5; /* Adjust line height for better visual alignment */
@@ -1125,13 +1126,16 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('.toggleButton').click(function() {
-            var target = $(this).data('target');
-            $(target).toggle();
+        $(document).ready(function() {
+            $('.toggleButton').click(function() {
+                var target = $(this).data('target');
+                var expanded = $(this).attr('aria-expanded') === 'true';
+                $(target).toggle();
+                $(this).attr('aria-expanded', !expanded);
+                $('.toggleIcon', this).html(expanded ? '&#x25BC;' : '&#x25B2;'); // Change icon based on expanded state
+            });
         });
-    });
-</script>
+    </script>
 
       </div>
     </article>
