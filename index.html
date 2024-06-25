@@ -762,18 +762,24 @@
             margin-top: 5px;
             padding: 5px;
         }
-        .toggleButton {
-            width: 50px;
-    	    height: 50px; // 자동 높이 조정            
-        }
-        .toggleButton span {
-            display: inline-block; /* Make sure the icon behaves as an inline element */
-            width: 100%; /* Span the full width of the button */
-        }
+       .toggleButton {
+	    width: 50px;
+	    height: 50px;
+	    position: relative; /* 상대적 위치 지정 */
+	    overflow: hidden; /* 넘치는 내용 숨기기 - 필요시 */
+	}
+	
+	.toggleButton span {
+	    display: block; /* 전체 너비 사용 */
+	    line-height: 50px; /* 버튼 높이와 같게 설정하여 중앙 정렬 */
+	    font-size: 1.5rem; /* 아이콘 크기 적절하게 조절 */
+	    text-align: center; /* 텍스트 중앙 정렬 */
+	}
+	
 	.btn {
-        margin-bottom: 0; /* 버튼 아래 마진 제거 */
-        padding-bottom: 0.25rem; /* 필요하다면 패딩도 조정 */
-    	}
+	    margin-bottom: 0; /* 버튼 아래 마진 제거 */
+	    padding-bottom: 0.25rem; /* 패딩 조절 */
+	}
 
       .checkbox-on {
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
@@ -874,8 +880,7 @@
                   </th>
                 </tr>
               </thead>              
-          <tbody>   
-	    
+          <tbody> 
             <tr id="627d5641-4d55-48c3-9345-3d5387473535">
               <td class="cell-notion://docs/created_time_property">
                  <span class="selected-value select-value-color-pink"
@@ -915,8 +920,8 @@
                     >📄 5. FITAMIN 상담 시 고려사항 </a
                   >
                 </td></tr></tbody>
-            </table></div>		    
-    </div><div class="d-flex align-items-center mb-3">
+            </table></div></div>
+	    <div class="d-flex align-items-center mb-3">
      	     <span class="selected-value select-value-color-yellow"
                   >상담 교육</span
                 >
