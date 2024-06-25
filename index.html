@@ -795,7 +795,7 @@
 	     <div class="d-flex align-items-center mb-3">
             <span class="selected-value select-value-color-orange">핏타민 서비스 소개</span>
             <button class="toggleButton btn btn-secondary ml-2" data-target="#hiddenSection1">
-                <span class="fas fa-chevron-down"></span>
+                <i class="fas fa-chevron-down"></i>
             </button>
 	    </div><div id="hiddenSection1" class="hiddenSection">
 	    <table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -867,7 +867,7 @@
             <div class="d-flex align-items-center mb-3">
      	    <span class="selected-value select-value-color-pink">영양제 추천</span>
             <button class="toggleButton btn btn-secondary ml-2" data-target="#hiddenSection2">
-                <span class="fas fa-chevron-down"></span>
+                <i class="fas fa-chevron-down"></i>
             </button>
 		    </div>
 		<div id="hiddenSection2" class="hiddenSection"> <table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -929,7 +929,7 @@
                   >상담 교육</span
                 >
             <button class="toggleButton btn btn-secondary ml-2" data-target="#hiddenSection3">
-                <span class="fas fa-chevron-down"></span>
+                <i class="fas fa-chevron-down"></i>
             </button>
 		     </div><div id="hiddenSection3" class="hiddenSection">
  <table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -1032,7 +1032,7 @@
                     >핏타민 제품 소개</span
                   >
             <button class="toggleButton btn btn-secondary ml-2" data-target="#hiddenSection4">
-                <span class="fas fa-chevron-down"></span>
+                <i class="fas fa-chevron-down"></i>
             </button>
 	</div><div id="hiddenSection4" class="hiddenSection">	  
  <table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -1079,7 +1079,7 @@
                           기타      
                 </span>
             <button class="toggleButton btn btn-secondary ml-2" data-target="#hiddenSection5">
-                <span class="fas fa-chevron-down"></span>
+                <i class="fas fa-chevron-down"></i>
             </button>
 		 </div>
 	<div id="hiddenSection5" class="hiddenSection">	    
@@ -1122,13 +1122,12 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-      $('.toggleButton').click(function() {
-    var target = $(this).data('target');
-    var expanded = $(this).attr('aria-expanded') === 'true';
-    $(target).toggle();
-    $(this).attr('aria-expanded', !expanded);
-    $('.fas', this).toggleClass('fa-chevron-down fa-chevron-up');
-	});
+        document.querySelector('.toggleButton').addEventListener('click', function() {
+            var section = document.querySelector('.hiddenSection');
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+            this.querySelector('i').classList.toggle('fa-chevron-down');
+            this.querySelector('i').classList.toggle('fa-chevron-up');
+        });
     </script>
 
       </div>
