@@ -1,861 +1,698 @@
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>추가 자료</title>
-	<style>
-		/* cspell:disable-file */
-		/* webkit printing magic: print all background colors */
-		html {
-			-webkit-print-color-adjust: exact;
-		}
-
-		* {
-			box-sizing: border-box;
-			-webkit-print-color-adjust: exact;
-		}
-
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		@media only screen {
-			body {
-				margin: 2em auto;
-				max-width: 900px;
-				color: rgb(55, 53, 47);
-			}
-		}
-
-		body {
-			line-height: 1.5;
-			white-space: pre-wrap;
-		}
-
-		a,
-		a.visited {
-			color: inherit;
-			text-decoration: none;
-		}
-
-		.pdf-relative-link-path {
-			font-size: 80%;
-			color: #444;
-		}
-
-		h1,
-		h2,
-		h3 {
-			letter-spacing: -0.01em;
-			line-height: 1.2;
-			font-weight: 600;
-			margin-bottom: 0;
-		}
-
-		.page-title {
-			font-size: 2.5rem;
-			font-weight: 700;
-			margin-top: 0;
-			margin-bottom: 0.75em;
-		}
-
-		h1 {
-			font-size: 1.875rem;
-			margin-top: 1.875rem;
-		}
-
-		h2 {
-			font-size: 1.5rem;
-			margin-top: 1.5rem;
-		}
-
-		h3 {
-			font-size: 1.25rem;
-			margin-top: 1.25rem;
-		}
-
-		.source {
-			border: 1px solid #ddd;
-			border-radius: 3px;
-			padding: 1.5em;
-			word-break: break-all;
-		}
-
-		.callout {
-			border-radius: 3px;
-			padding: 1rem;
-		}
-
-		figure {
-			margin: 1.25em 0;
-			page-break-inside: avoid;
-		}
-
-		figcaption {
-			opacity: 0.5;
-			font-size: 85%;
-			margin-top: 0.5em;
-		}
-
-		mark {
-			background-color: transparent;
-		}
-
-		.indented {
-			padding-left: 1.5em;
-		}
-
-		hr {
-			background: transparent;
-			display: block;
-			width: 100%;
-			height: 1px;
-			visibility: visible;
-			border: none;
-			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-		}
-
-		img {
-			max-width: 100%;
-		}
-
-		@media only print {
-			img {
-				max-height: 100vh;
-				object-fit: contain;
-			}
-		}
-
-		@page {
-			margin: 1in;
-		}
-
-		.collection-content {
-			font-size: 0.875rem;
-		}
-
-		.column-list {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.column {
-			padding: 0 1em;
-		}
-
-		.column:first-child {
-			padding-left: 0;
-		}
-
-		.column:last-child {
-			padding-right: 0;
-		}
-
-		.table_of_contents-item {
-			display: block;
-			font-size: 0.875rem;
-			line-height: 1.3;
-			padding: 0.125rem;
-		}
-
-		.table_of_contents-indent-1 {
-			margin-left: 1.5rem;
-		}
-
-		.table_of_contents-indent-2 {
-			margin-left: 3rem;
-		}
-
-		.table_of_contents-indent-3 {
-			margin-left: 4.5rem;
-		}
-
-		.table_of_contents-link {
-			text-decoration: none;
-			opacity: 0.7;
-			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-		}
-
-		table,
-		th,
-		td {
-			border: 1px solid rgba(55, 53, 47, 0.09);
-			border-collapse: collapse;
-		}
-
-		table {
-			border-left: none;
-			border-right: none;
-		}
-
-		th,
-		td {
-			font-weight: normal;
-			padding: 0.25em 0.5em;
-			line-height: 1.5;
-			min-height: 1.5em;
-			text-align: left;
-		}
-
-		th {
-			color: rgba(55, 53, 47, 0.6);
-		}
-
-		ol,
-		ul {
-			margin: 0;
-			margin-block-start: 0.6em;
-			margin-block-end: 0.6em;
-		}
-
-		li>ol:first-child,
-		li>ul:first-child {
-			margin-block-start: 0.6em;
-		}
-
-		ul>li {
-			list-style: disc;
-		}
-
-		ul.to-do-list {
-			padding-inline-start: 0;
-		}
-
-		ul.to-do-list>li {
-			list-style: none;
-		}
-
-		.to-do-children-checked {
-			text-decoration: line-through;
-			opacity: 0.375;
-		}
-
-		ul.toggle>li {
-			list-style: none;
-		}
-
-		ul {
-			padding-inline-start: 1.7em;
-		}
-
-		ul>li {
-			padding-left: 0.1em;
-		}
-
-		ol {
-			padding-inline-start: 1.6em;
-		}
-
-		ol>li {
-			padding-left: 0.2em;
-		}
-
-		.mono ol {
-			padding-inline-start: 2em;
-		}
-
-		.mono ol>li {
-			text-indent: -0.4em;
-		}
-
-		.toggle {
-			padding-inline-start: 0em;
-			list-style-type: none;
-		}
-
-		/* Indent toggle children */
-		.toggle>li>details {
-			padding-left: 1.7em;
-		}
-
-		.toggle>li>details>summary {
-			margin-left: -1.1em;
-		}
-
-		.selected-value {
-			display: inline-block;
-			padding: 0 0.5em;
-			background: rgba(206, 205, 202, 0.5);
-			border-radius: 3px;
-			margin-right: 0.5em;
-			margin-top: 0.3em;
-			margin-bottom: 0.3em;
-			white-space: nowrap;
-		}
-
-		.collection-title {
-			display: inline-block;
-			margin-right: 1em;
-		}
-
-		.simple-table {
-			margin-top: 1em;
-			font-size: 0.875rem;
-			empty-cells: show;
-		}
-
-		.simple-table td {
-			height: 29px;
-			min-width: 120px;
-		}
-
-		.simple-table th {
-			height: 29px;
-			min-width: 120px;
-		}
-
-		.simple-table-header-color {
-			background: rgb(247, 246, 243);
-			color: black;
-		}
-
-		.simple-table-header {
-			font-weight: 500;
-		}
-
-		time {
-			opacity: 0.5;
-		}
-
-		.icon {
-			display: inline-block;
-			max-width: 1.2em;
-			max-height: 1.2em;
-			text-decoration: none;
-			vertical-align: text-bottom;
-			margin-right: 0.5em;
-		}
-
-		img.icon {
-			border-radius: 3px;
-		}
-
-		.user-icon {
-			width: 1.5em;
-			height: 1.5em;
-			border-radius: 100%;
-			margin-right: 0.5rem;
-		}
-
-		.user-icon-inner {
-			font-size: 0.8em;
-		}
-
-		.text-icon {
-			border: 1px solid #000;
-			text-align: center;
-		}
-
-		.page-cover-image {
-			display: block;
-			object-fit: cover;
-			width: 100%;
-			max-height: 30vh;
-		}
-
-		.page-header-icon {
-			font-size: 3rem;
-			margin-bottom: 1rem;
-		}
-
-		.page-header-icon-with-cover {
-			margin-top: -0.72em;
-			margin-left: 0.07em;
-		}
-
-		.page-header-icon img {
-			border-radius: 3px;
-		}
-
-		.link-to-page {
-			margin: 1em 0;
-			padding: 0;
-			border: none;
-			font-weight: 500;
-		}
-
-		p>.user {
-			opacity: 0.5;
-		}
-
-		td>.user,
-		td>time {
-			white-space: nowrap;
-		}
-
-		input[type="checkbox"] {
-			transform: scale(1.5);
-			margin-right: 0.6em;
-			vertical-align: middle;
-		}
-
-		p {
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-		}
-
-		.image {
-			border: none;
-			margin: 1.5em 0;
-			padding: 0;
-			border-radius: 0;
-			text-align: center;
-		}
-
-		.code,
-		code {
-			background: rgba(135, 131, 120, 0.15);
-			border-radius: 3px;
-			padding: 0.2em 0.4em;
-			border-radius: 3px;
-			font-size: 85%;
-			tab-size: 2;
-		}
-
-		code {
-			color: #eb5757;
-		}
-
-		.code {
-			padding: 1.5em 1em;
-		}
-
-		.code-wrap {
-			white-space: pre-wrap;
-			word-break: break-all;
-		}
-
-		.code>code {
-			background: none;
-			padding: 0;
-			font-size: 100%;
-			color: inherit;
-		}
-
-		blockquote {
-			font-size: 1.25em;
-			margin: 1em 0;
-			padding-left: 1em;
-			border-left: 3px solid rgb(55, 53, 47);
-		}
-
-		.bookmark {
-			text-decoration: none;
-			max-height: 8em;
-			padding: 0;
-			display: flex;
-			width: 100%;
-			align-items: stretch;
-		}
-
-		.bookmark-title {
-			font-size: 0.85em;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			height: 1.75em;
-			white-space: nowrap;
-		}
-
-		.bookmark-text {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.bookmark-info {
-			flex: 4 1 180px;
-			padding: 12px 14px 14px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-
-		.bookmark-image {
-			width: 33%;
-			flex: 1 1 180px;
-			display: block;
-			position: relative;
-			object-fit: cover;
-			border-radius: 1px;
-		}
-
-		.bookmark-description {
-			color: rgba(55, 53, 47, 0.6);
-			font-size: 0.75em;
-			overflow: hidden;
-			max-height: 4.5em;
-			word-break: break-word;
-		}
-
-		.bookmark-href {
-			font-size: 0.75em;
-			margin-top: 0.25em;
-		}
-
-		.sans {
-			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-		}
-
-		.code {
-			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
-		}
-
-		.serif {
-			font-family: Lyon-Text, Georgia, ui-serif, serif;
-		}
-
-		.mono {
-			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-		}
-
-		.pdf .sans {
-			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
-		}
-
-		.pdf:lang(zh-CN) .sans {
-			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
-		}
-
-		.pdf:lang(zh-TW) .sans {
-			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
-		}
-
-		.pdf:lang(ko-KR) .sans {
-			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
-		}
-
-		.pdf .code {
-			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
-		}
-
-		.pdf:lang(zh-CN) .code {
-			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
-		}
-
-		.pdf:lang(zh-TW) .code {
-			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
-		}
-
-		.pdf:lang(ko-KR) .code {
-			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
-		}
-
-		.pdf .serif {
-			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
-		}
-
-		.pdf:lang(zh-CN) .serif {
-			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
-		}
-
-		.pdf:lang(zh-TW) .serif {
-			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
-		}
-
-		.pdf:lang(ko-KR) .serif {
-			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
-		}
-
-		.pdf .mono {
-			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
-		}
-
-		.pdf:lang(zh-CN) .mono {
-			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
-		}
-
-		.pdf:lang(zh-TW) .mono {
-			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
-		}
-
-		.pdf:lang(ko-KR) .mono {
-			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
-		}
-
-		.highlight-default {
-			color: rgba(55, 53, 47, 1);
-		}
-
-		.highlight-gray {
-			color: rgba(120, 119, 116, 1);
-			fill: rgba(120, 119, 116, 1);
-		}
-
-		.highlight-brown {
-			color: rgba(159, 107, 83, 1);
-			fill: rgba(159, 107, 83, 1);
-		}
-
-		.highlight-orange {
-			color: rgba(217, 115, 13, 1);
-			fill: rgba(217, 115, 13, 1);
-		}
-
-		.highlight-yellow {
-			color: rgba(203, 145, 47, 1);
-			fill: rgba(203, 145, 47, 1);
-		}
-
-		.highlight-teal {
-			color: rgba(68, 131, 97, 1);
-			fill: rgba(68, 131, 97, 1);
-		}
-
-		.highlight-blue {
-			color: rgba(51, 126, 169, 1);
-			fill: rgba(51, 126, 169, 1);
-		}
-
-		.highlight-purple {
-			color: rgba(144, 101, 176, 1);
-			fill: rgba(144, 101, 176, 1);
-		}
-
-		.highlight-pink {
-			color: rgba(193, 76, 138, 1);
-			fill: rgba(193, 76, 138, 1);
-		}
-
-		.highlight-red {
-			color: rgba(212, 76, 71, 1);
-			fill: rgba(212, 76, 71, 1);
-		}
-
-		.highlight-gray_background {
-			background: rgba(241, 241, 239, 1);
-		}
-
-		.highlight-brown_background {
-			background: rgba(244, 238, 238, 1);
-		}
-
-		.highlight-orange_background {
-			background: rgba(251, 236, 221, 1);
-		}
-
-		.highlight-yellow_background {
-			background: rgba(251, 243, 219, 1);
-		}
-
-		.highlight-teal_background {
-			background: rgba(237, 243, 236, 1);
-		}
-
-		.highlight-blue_background {
-			background: rgba(231, 243, 248, 1);
-		}
-
-		.highlight-purple_background {
-			background: rgba(244, 240, 247, 0.8);
-		}
-
-		.highlight-pink_background {
-			background: rgba(249, 238, 243, 0.8);
-		}
-
-		.highlight-red_background {
-			background: rgba(253, 235, 236, 1);
-		}
-
-		.block-color-default {
-			color: inherit;
-			fill: inherit;
-		}
-
-		.block-color-gray {
-			color: rgba(120, 119, 116, 1);
-			fill: rgba(120, 119, 116, 1);
-		}
-
-		.block-color-brown {
-			color: rgba(159, 107, 83, 1);
-			fill: rgba(159, 107, 83, 1);
-		}
-
-		.block-color-orange {
-			color: rgba(217, 115, 13, 1);
-			fill: rgba(217, 115, 13, 1);
-		}
-
-		.block-color-yellow {
-			color: rgba(203, 145, 47, 1);
-			fill: rgba(203, 145, 47, 1);
-		}
-
-		.block-color-teal {
-			color: rgba(68, 131, 97, 1);
-			fill: rgba(68, 131, 97, 1);
-		}
-
-		.block-color-blue {
-			color: rgba(51, 126, 169, 1);
-			fill: rgba(51, 126, 169, 1);
-		}
-
-		.block-color-purple {
-			color: rgba(144, 101, 176, 1);
-			fill: rgba(144, 101, 176, 1);
-		}
-
-		.block-color-pink {
-			color: rgba(193, 76, 138, 1);
-			fill: rgba(193, 76, 138, 1);
-		}
-
-		.block-color-red {
-			color: rgba(212, 76, 71, 1);
-			fill: rgba(212, 76, 71, 1);
-		}
-
-		.block-color-gray_background {
-			background: rgba(241, 241, 239, 1);
-		}
-
-		.block-color-brown_background {
-			background: rgba(244, 238, 238, 1);
-		}
-
-		.block-color-orange_background {
-			background: rgba(251, 236, 221, 1);
-		}
-
-		.block-color-yellow_background {
-			background: rgba(251, 243, 219, 1);
-		}
-
-		.block-color-teal_background {
-			background: rgba(237, 243, 236, 1);
-		}
-
-		.block-color-blue_background {
-			background: rgba(231, 243, 248, 1);
-		}
-
-		.block-color-purple_background {
-			background: rgba(244, 240, 247, 0.8);
-		}
-
-		.block-color-pink_background {
-			background: rgba(249, 238, 243, 0.8);
-		}
-
-		.block-color-red_background {
-			background: rgba(253, 235, 236, 1);
-		}
-
-		.select-value-color-pink {
-			background-color: rgba(245, 224, 233, 1);
-		}
-
-		.select-value-color-purple {
-			background-color: rgba(232, 222, 238, 1);
-		}
-
-		.select-value-color-green {
-			background-color: rgba(219, 237, 219, 1);
-		}
-
-		.select-value-color-gray {
-			background-color: rgba(227, 226, 224, 1);
-		}
-
-		.select-value-color-translucentGray {
-			background-color: rgba(255, 255, 255, 0.0375);
-		}
-
-		.select-value-color-orange {
-			background-color: rgba(250, 222, 201, 1);
-		}
-
-		.select-value-color-brown {
-			background-color: rgba(238, 224, 218, 1);
-		}
-
-		.select-value-color-red {
-			background-color: rgba(255, 226, 221, 1);
-		}
-
-		.select-value-color-yellow {
-			background-color: rgba(253, 236, 200, 1);
-		}
-
-		.select-value-color-blue {
-			background-color: rgba(211, 229, 239, 1);
-		}
-
-		.checkbox {
-			display: inline-flex;
-			vertical-align: text-bottom;
-			width: 16;
-			height: 16;
-			background-size: 16px;
-			margin-left: 2px;
-			margin-right: 5px;
-		}
-
-		.checkbox-on {
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-		}
-
-		.checkbox-off {
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-		}
-	</style>
-</head>
-
-<body>
-	<article id="7600191d-e30d-4b6a-825e-a6dfc3db24ae" class="page sans">
-		<header>
-			<h1 class="page-title">추가 자료</h1>
-			<table class="properties">
-				<tbody>
-					<tr class="property-row property-row-created_by">
-						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
-									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
-									class="typesMultipleSelect">
-									<path
-										d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z">
-									</path>
-								</svg></span>카테고리</th>
-						<td><span class="selected-value select-value-color-blue">영양요법 Case & 추가 자료</span></td>
-					</tr>
-				</tbody>
-			</table>
-		</header>
-		<div class="page-body">
-
-
-			<figure id="edcd2f60-ff36-46ce-ada3-026c92d6a972"><a
-					href="https://drive.google.com/drive/folders/1q0JvhEPmbfg056M6cP4459g7DW6KP_g_"
-					class="bookmark source">
-					<div class="bookmark-info">
-						<div class="bookmark-text">
-							<div class="bookmark-title">15. 추가 식약처 자료 - Google Drive</div>
-						</div>
-
-						<div class="bookmark-href"><img
-								src="https://www.notion.so//ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
-								class="icon bookmark-icon" />https://drive.google.com/drive/folders/1q0JvhEPmbfg056M6cP4459g7DW6KP_g_
-						</div>
-					</div>
-				</a></figure>
-			<p id="ee55f82f-99f2-439d-987b-9c63513aeea1" class="">
-
-
-
-
-
-
-				<a href="../index.html">🔝</a><a href="../index.html"><strong> 교육자료 페이지로 돌아가기 </strong></a><strong>
-				</strong>
-				<script>
-					document.addEventListener('contextmenu', function (e) {
-						e.preventDefault();
-					});
-				</script>
-		</div>
-	</article>
-</body>
-
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1. 운동 시 영양 요법 케이스</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2fcd8933-12f8-4c6b-9bf3-ae3ee16b16ce" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1445384763658-0400939829cd?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">1. 운동 시 영양 요법 케이스</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h2 id="cfc00243-fa84-415f-9974-1be0bce3480c" class="block-color-pink_background">1) 고객 히스토리</h2><p id="6696d9fd-d60f-4ebe-87c2-47f9f3f2bb42" class="">
+</p><ul id="203867b7-6fd6-4f66-a1d3-8ce5785380fa" class="bulleted-list"><li style="list-style-type:disc">30대 남성</li></ul><ul id="97051cd0-6740-4530-adf7-7803c1904ee6" class="bulleted-list"><li style="list-style-type:disc">직업: 헬스 트레이너</li></ul><ul id="c0777958-02d9-4828-a872-e3efebb89798" class="bulleted-list"><li style="list-style-type:disc">특이사항: 고강도 인터벌 트레이닝을 즐김</li></ul><ul id="5dee442b-5ced-44e3-b365-5350d041f66b" class="bulleted-list"><li style="list-style-type:disc">섭취 중인 영양제: 비타민B군, 비타민D, 오메가3, 칼슘, 마그네슘</li></ul><ul id="585b0378-8820-4013-8bcc-d02056197b80" class="bulleted-list"><li style="list-style-type:disc">영양제 상담 목적: 현재 섭취 중인 영양제 점검 및 운동 수행 능력 증진을 위한 컨설팅 요청</li></ul><p id="ad46056d-70f3-4131-b90b-d77f8c343925" class="">
+</p><p id="70e7963d-93b6-46ad-872a-a4cd527727b2" class="">
+</p><h2 id="f15b3477-2770-4f49-9f35-52ac761cb38d" class="block-color-pink_background">2) 운동 시 적절한 영양제 섭취 필요성 설명</h2><p id="ecec6c91-da11-4328-b6d5-ebc16f79136a" class="">
+</p><ul id="937d4ef6-e2cf-4777-882d-ace3e56bef1e" class="bulleted-list"><li style="list-style-type:disc">지속적이고 건강하게 운동을 하기 위해서는 운동 후 영양 보충도 중요 합니다. 근 수축력 증가, 에너지 공급, 혈류 증가 등 운동 수행 능력에 직접적으로 도움을 줄 수도 있고, 근육 보호하여 운동 후 회복 과정을 앞당기거나 근육통/피로/부상 예방, 면역체계 강화 등을 통해 간접적으로 운동 수행 능력을 보조할 수 있습니다.</li></ul><p id="378c5680-cecc-4bf8-9497-102e095715a6" class="">
+</p><figure id="568020c2-9f2e-496f-b8e9-ca204c4a0753" class="image"><a href="1%20%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%89%E1%85%B5%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%20%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%202fcd893312f84c6b9bf3ae3ee16b16ce/Untitled.png"><img style="width:708px" src="1 운동 시 영양 요법 케이스 2fcd893312f84c6b9bf3ae3ee16b16ce/Untitled.png"/></a></figure><p id="60565ff0-8ba1-46ca-bff2-cea63a687746" class="">
+</p><h2 id="fa1af978-19c7-4302-ab21-a9053e146456" class="block-color-pink_background">3) 운동 시 추천 영양 성분</h2><p id="b127bdc1-6695-437b-9686-cf09d6e962f8" class="">
+</p><p id="5db58042-ab7e-4e42-b920-7b18b9a848fe" class=""><strong>✅ </strong><mark class="highlight-default"><strong>크레아틴: 고강도 저항성 운동의 초기 단계에서 운동 수행 능력 유지에 효과적, 근육량과 근력 및 파워 향상, 상체 근육 크기 증가</strong></mark></p><p id="b8be5370-c4e8-4a84-b2a2-9a5f732f4134" class=""><mark class="highlight-default"><strong>✅ 아르기닌: 운동 시 피로 저항도 향상, 운동 지속 시간 향상, 운동 수행 능력 향상, 단백질 합성 향상</strong></mark></p><p id="02d208f6-6775-4da1-b25f-3e15ff1b84e6" class=""><mark class="highlight-default"><strong>✅ 비타민 B군: 포도당 대사의 중추적인 역할, 에너지 생성 및 대사, 유산소 운동 시 더 많이 필요, 혈액 생성에 필요</strong></mark></p><p id="15cbece8-3f62-45d7-ac7b-7206c3975f85" class=""><mark class="highlight-default"><strong>✅ 비타민 D: 칼슘 흡수 도움, 면역 기능 향상, 생체 리듬 유지</strong></mark></p><p id="ade48b49-f4bb-4576-9f30-08f002b91672" class=""><mark class="highlight-default"><strong>✅ 비타민 C: 항산화제, 염증 억제, 면역 강화, 피로 개선, 운동 수행력 36% 증가 및 달리기 효율&amp;파워 증가 보고</strong></mark></p><p id="4c33d353-a513-4cca-a8d0-435c20f867a0" class=""><mark class="highlight-default"><strong>✅ 오메가3: 항염 작용, 근육통 감소, 근육 파괴 관련 효소 수치 감소</strong></mark></p><p id="0e08583a-5e95-4aea-ad14-432f449b64f9" class=""><mark class="highlight-default"><strong>✅ 칼슘: 신경과 근육 기능 유지, 골격 건강, 동물성 단백질에 많은 함황 아미노산 대사물질이 중화되는 과정에서 소변을 통한 칼슘 손실 증가</strong></mark></p><p id="f725bd2d-1a22-4ad4-bff2-0683a88e3f56" class=""><mark class="highlight-default"><strong>✅ 마그네슘: 근육 이완, 근육통 개선, 고강도 운동시 손실 증가</strong></mark></p><p id="cb7c9387-f070-4534-a88c-0ad256751bfd" class=""><mark class="highlight-default"><strong>✅ 철분: 혈액 생성, 산소의 운반</strong></mark></p><p id="e1d1ac07-41cb-4676-b724-223708ed7ba4" class=""><mark class="highlight-default"><strong>✅ 아연: 핵산 합성, 면역 기능 활성화, 성장, 상처 회복</strong></mark></p><p id="a23ed551-89bc-4a64-bc2d-ef06775563b6" class="">
+</p><h2 id="28b7f32b-c887-4c6c-9c29-465b22a7b58c" class="block-color-pink_background">4) 적절한 영양제 섭취 방법 안내</h2><p id="c6a5cac0-4e5b-4d60-9f5c-7cbaf3fb60e3" class="">
+</p><ul id="d1e618c0-30a5-49ff-8cb4-2b4a3eabb1a9" class="bulleted-list"><li style="list-style-type:disc"><strong>운동 전: </strong>혈관 확장과 혈류 개선을 돕는 아르기닌 섭취, 근육에 적절한 영양소 공급과 근수축을 위한 에너지 확보를 위해 BCAA, 단당류 탄수화물, 소량의 단백질 섭취</li></ul><p id="1bfdcaea-be52-44cf-b232-0357f07fceb1" class="">
+</p><ul id="c6d3f667-a363-4d70-b9e8-d4675de7ba1e" class="bulleted-list"><li style="list-style-type:disc"><strong>운동 후: </strong>운동 후 에너지와 글리코켄, 단백질이 소모된 시점에서 충분한 영양 보충 필요. 탄수화물과 함께 크레아틴, 비타민, 미네랄, 오메가3 등 보충제 섭취</li></ul><p id="f4c91074-206d-46a8-8850-09b7e88808f5" class="">
+</p><ul id="0302461c-0234-422d-861d-78beb483fb7f" class="bulleted-list"><li style="list-style-type:disc"><strong>평소: </strong>양의 단백질 균형을 조성하고 근육 성장을 유도하기 위해 적절한 단백질 섭취<ul id="475fa8ab-171a-4ce6-9622-699eaa655220" class="bulleted-list"><li style="list-style-type:circle">적정 단백질 섭취량<ul id="52b4cb96-38d1-4d74-a782-5d7a5079eac8" class="bulleted-list"><li style="list-style-type:square">활동이 적은 경우, 보통 활동량 (주 1~2회 운동): 0.8~1 g/kg</li></ul><ul id="ec114299-ec64-4114-b027-73c654ee0aa6" class="bulleted-list"><li style="list-style-type:square">활동적인 경우 (주3~4회 운동), 다이어터: 1.2~1.8 g/kg</li></ul><ul id="3e9d7cd4-d4e5-40af-a9a4-424352036b4d" class="bulleted-list"><li style="list-style-type:square">주 5회 이상 운동하는 경우,근 비대를 목표로 하는 운동인: 1.6~2 g/kg</li></ul><ul id="5f809ed8-c5a3-4ea5-8b30-dc8f76b47d24" class="bulleted-list"><li style="list-style-type:square">노인의 근 감소 예방 1.2 g/kg</li></ul><ul id="9dfe7633-9a1a-4f01-9623-b87371633e20" class="bulleted-list"><li style="list-style-type:square">저항성 운동선수 1.6~1.7 g/kg</li></ul><ul id="0c2c8e69-35f2-4b51-8902-f27f948c44d0" class="bulleted-list"><li style="list-style-type:square">지구성 운동선수 1.2~1.4 g/kg</li></ul></li></ul><ul id="8241d5c6-7729-4185-b105-558bb95b8541" class="bulleted-list"><li style="list-style-type:circle">적절한 단백질 보충제 고르기<ul id="0bd2b237-b9a6-476c-b38c-ea57c6e2c86e" class="bulleted-list"><li style="list-style-type:square">WPC(Whey Protein Concentrate): 농축 유청 단백질로 가장 기본 단백질 보충제. 유당, 유지방, 락토페린 등이 함유되어 있어 유당불내증일 경우 피하는 것이 좋음.</li></ul><ul id="5d53bf1a-3a2e-4d22-86e6-5a97fa238b3b" class="bulleted-list"><li style="list-style-type:square">WPI(Whey Protein Isolate): 분리유청단백질로 유당함유량이 적음. 유당불내증이 있거나 소화력이 떨어지는 경우 추천.</li></ul><ul id="c659076c-9672-43bd-b8b8-9b2e565e11a7" class="bulleted-list"><li style="list-style-type:square">WPH(Whey Protien Hydrolysate): 가수분해 유청단백질로 소화 흡수가 용이함. 소화력이 떨어지거나 빠른 단백질 흡수가 필요한 경우 추천.</li></ul></li></ul></li></ul><p id="cfd70e0c-803a-4e8d-9b5a-0fb250f851ac" class="">
+</p><ul id="a909589a-ff59-4c2d-8ef1-6fcecc5a4ec9" class="bulleted-list"><li style="list-style-type:disc"><strong>적절한 영양 섭취 타이밍: </strong>적절한 타이밍에 들어간 영양소가 근육 성장과 운동 능력 극대화</li></ul><figure id="b798d68d-4ae2-47b9-b7d3-f42353ee8309" class="image"><a href="1%20%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%89%E1%85%B5%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%20%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%202fcd893312f84c6b9bf3ae3ee16b16ce/Untitled%201.png"><img style="width:1161px" src="1 운동 시 영양 요법 케이스 2fcd893312f84c6b9bf3ae3ee16b16ce/Untitled%201.png"/></a></figure><p id="2ec88932-6499-4c4e-a724-9efe84870d4c" class="">
+</p><p id="9699b05f-9a41-4029-9ee8-72d5c27ee64f" class="">
+</p><h2 id="de2044a9-468e-4ca5-89e6-96c3f0fa1d46" class="block-color-pink_background">5) 주의 사항 안내</h2><p id="0729685b-a745-4f8f-9e03-4a76ff1ae219" class="">
+</p><ul id="045328a5-ae5c-4551-95e2-a8fc5061786f" class="bulleted-list"><li style="list-style-type:disc">과격한 운동, 다량의 단백질 섭취 등으로 인해 대사활동이 늘고 간과 신장이 쉽게 피로해 질 수 있으므로 적절한 수분 섭취와 영양 섭취 및 컨디션 관리가 필수적입니다.</li></ul><ul id="3e13dc8b-87a5-484a-a752-89bb1e2236ca" class="bulleted-list"><li style="list-style-type:disc">크레아틴 보충제의 경우 수분을 끌어당기는 특징이 있어 평소 보다 많은 수분 섭취가 필요합니다. 신장 질환이 있는 경우 주의가 필요합니다.</li></ul><ul id="f6e241f7-deaa-42eb-a0f7-00ec79cc5e5f" class="bulleted-list"><li style="list-style-type:disc">아르기닌은 구내염, 헤르페스 감염, 포진이 나타날 경우 주의가 필요합니다. 또한, 심혈관계질환이 있거나 천식이 있을 경우 주의해야 하며 노인 인구에서 장기간 만성 사용은 경계해야한다는 보고가 있습니다. </li></ul><ul id="c7e2ac8c-503d-46ad-a95a-707dadbcad30" class="bulleted-list"><li style="list-style-type:disc">비타민B군과 아연의 경우 공복 섭취 시 울렁거림, 속쓰림 등 위장장애가 나타날 수 있으니식후에 섭취하는 것을 추천드립니다.</li></ul><ul id="24e67602-470c-4e70-a4bb-94de815a809b" class="bulleted-list"><li style="list-style-type:disc">고 단백 식사 시 수분 사용량이 7배 이상 증가하고, 소변을 통한 칼슘 손실 증가할 수 있습니다.</li></ul><p id="8a32a259-7710-47fe-ac9d-4ae0920664b7" class="">
+</p><p id="7c8aaaba-e32b-4e05-88f5-c006e3a073f8" class="">
+</p><h2 id="62884e50-cbfc-4ef4-94a7-6f14c6305f46" class="block-color-pink_background">6) 추가 문의 사항 답변</h2><p id="6bc50051-a23b-4943-84a3-645cfef6d5a5" class="">
+</p><ul id="e2fff5bf-a34e-4029-863a-b0ac98fd7272" class="bulleted-list"><li style="list-style-type:disc">Q. 단백질 보충제 복용 시 트러블이 일어날 수 있나요?</li></ul><ul id="0a2f7be3-2e0f-4691-847a-62e8130547cb" class="bulleted-list"><li style="list-style-type:disc">A. 네 있습니다. 유청단백질의 경우 유당불내증이 있으면 유당으로 인해 가스나 설사가 유발될 수 있으며, 카제인 단백질에 의해서도 소화불량이 유발될 수 있습니다. 또한, 우유의 IGF(성장인자)에 의해 피지분비 증가, 여드름 생성과도 관련이 있습니다. 따라서 대안으로 식물성 단백질(대두, 완두콩, 현미 등)을 여러 종류 골고루 섭취하실 수 있습니다.</li></ul><p id="55a2f4c5-df4d-4955-9a94-54a3031ab939" class="">
+</p><ul id="7e107f7a-a6e7-4ada-ae15-70077fbf6352" class="bulleted-list"><li style="list-style-type:disc">Q. 탄수화물 섭취 제한, 저탄고지 등이 유행인데 근육 생성 관점에서는 어떤가요?</li></ul><ul id="28b8099a-d8f8-400c-96f2-cc465b77fa3f" class="bulleted-list"><li style="list-style-type:disc">A. 잦은 탄수화물 섭취로 인해 인슐린 저항성, 렙틴 저항성 등 여러 대사 문제가 생기고 비만으로 이어진다는 연구 결과가 있습니다. 따라서 체지방 감소를 목적으로 하는 경우에는 너무 잦은 탄수화물 섭취와 인슐린 노출을 꺼려하실 수 있습니다. 하지만, 근육 생성의 관점에서는 적절한 탄수화물 섭취와 인슐린 분비가 필요합니다. 동화작용 환경 향상과 글리코겐 및 단백질 합성, 근육 발달, 중추 피로 경감, 운동수행능력 향상에 필요하기 때문입니다. 따라서 각자의 니즈에 맞춰 탄수화물 섭취량을 조절이 필요합니다.</li></ul><p id="581bf248-f765-4c29-91df-9924f565f482" class="">
+</p><ul id="486428c5-e9de-48c8-95ae-9ead81022272" class="bulleted-list"><li style="list-style-type:disc">Q. 근이완제를 먹으면 근 손실이 오나요?</li></ul><ul id="2601e3eb-0d9f-4088-83b4-d3db36ba740f" class="bulleted-list"><li style="list-style-type:disc">A. 아니요. 영향을 미치지 않습니다. 근육통으로 복용하는 대부분의 근이완제는 중추성 근이완제로 뇌와 척수 등 중추신경계에서 반사 작용을 억제하여 근육을 이완시키며, 운동 신경 작용을 억제하여 근육 경력을 완화합니다. 따라서 근육 합성 단계에 영향을 미치지 않습니다.</li></ul><p id="d3f42dd7-5493-4621-a741-1e661e94bd45" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
