@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>5. 교대근무자의 추천 영양요법</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+
+
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="65d9fd30-7176-4101-9973-cb6f5fd3b2af" class="page sans"><header><h1 class="page-title">5. 교대근무자의 추천 영양요법</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="772d5056-c306-4dea-88c4-511135b3e129" class="block-color-pink_background"><strong>1. 고객 히스토리</strong></p><ul id="1f15ef3f-7bc1-4887-b828-3e03220adfec" class="block-color-default bulleted-list"><li style="list-style-type:disc"><strong>상담일</strong>: 2024.3.26</li></ul><ul id="a839dafe-8896-4f95-af76-4ce08933f992" class="bulleted-list"><li style="list-style-type:disc"><strong>상담 유형</strong>: 채팅 예약상담</li></ul><ul id="274f78c3-5227-4f33-a81a-765115037d6d" class="bulleted-list"><li style="list-style-type:disc"><strong>고객 특이사항</strong><ul id="31eabddc-dfeb-47c7-8ddf-3bca226e7624" class="bulleted-list"><li style="list-style-type:circle">29세 여성</li></ul><ul id="1fa19152-4455-42b1-9ecf-de6e635313ab" class="bulleted-list"><li style="list-style-type:circle">복용중인 의약품:  야즈. 졸로푸트 및 PPI 복용</li></ul><ul id="9631b88b-0c01-424e-a1ae-3c07b13b7913" class="bulleted-list"><li style="list-style-type:circle">약한 저혈압(90/50)</li></ul><ul id="138c127a-65d5-4c58-b196-9b5102773a4a" class="bulleted-list"><li style="list-style-type:circle">교대근무</li></ul></li></ul><ul id="1f64149a-850b-4b2d-a76b-33284cabded7" class="bulleted-list"><li style="list-style-type:disc">호소증상<ul id="839ed7dc-5cd4-4752-a9b6-3b1a6d70b110" class="bulleted-list"><li style="list-style-type:circle">피곤</li></ul></li></ul><ul id="5092065b-39e6-48cc-8daa-ef1ef7c04211" class="bulleted-list"><li style="list-style-type:disc">추천영양제<ul id="25ce6bb8-3e5d-49fb-80d3-4d0f9a271430" class="bulleted-list"><li style="list-style-type:circle"><strong>비타민B컴플렉스, 코엔자임Q10, 비타민C, 비타민D, 마그네슘, 복합미네랄</strong></li></ul><ul id="b29658fc-0909-4646-b532-a341a8f4a10c" class="bulleted-list"><li style="list-style-type:circle">일부는 고객 요청</li></ul><ul id="b8e9862f-209d-41b8-8a82-9422f5fbfa30" class="bulleted-list"><li style="list-style-type:circle">밀크씨슬은 혹시 모를 상호작용으로 제외함</li></ul></li></ul><ul id="775ec6ea-5f4a-4733-9d8a-9c29dd22a133" class="bulleted-list"><li style="list-style-type:disc">투여방법<ul id="f7e799f8-34a9-40e3-b711-5ce0f652e8f3" class="bulleted-list"><li style="list-style-type:circle">오전포로 구성하여 기상 후 첫 식사 후 1포 복용</li></ul></li></ul><ul id="e3e6a289-e2b1-4491-8fef-71a38ea4a53d" class="bulleted-list"><li style="list-style-type:disc">경과<ul id="57a6b4c4-8293-4188-b8b8-7ffa448eeb63" class="bulleted-list"><li style="list-style-type:circle">7/12일 기준 4회차 구독중</li></ul></li></ul><p id="4cdb15c2-6cbd-43b0-bafc-6f1b69b2a00d" class="">
+</p><p id="846ed7ec-ec04-4f6f-9584-4a47b9779be2" class="">
+</p><p id="8ba2baa0-7f4c-4a55-992e-aa0eee762bec" class="block-color-pink_background"><strong>2. 교대근무자 특성</strong></p><ol type="1" id="40320455-7f12-4afb-8c66-f88083596eca" class="numbered-list" start="1"><li>교대근무와 정신건강<ol type="a" id="4637509f-979d-47d2-973f-4e73d4f5f88c" class="numbered-list" start="1"><li>교대근무자가 겪는 정신 건강문제 <ol type="i" id="b3832a34-589d-49aa-bcbe-4d100fdffb65" class="numbered-list" start="1"><li>교대근무자는 정신건강에서 많은 문제가 발생함</li></ol><figure id="d053950d-9389-4c2f-aa63-c74e6ea921b9" class="image"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Clipboard_image_-_2024%25EB%2585%2584_7%25EC%259B%2594_10%25EC%259D%25BC_%25EC%2598%25A4%25ED%259B%2584_6_20.png"><img style="width:1594px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Clipboard_image_6_20.png"/></a></figure><p id="5d8477f5-2458-46a3-ae02-798d006119b4" class="">수면 불균형, 우울과 불안, 자살 사고, 약물 남용(각성제, 수면제, 흡연, 음주 등), 인지능력 감소, 삶의 질 감소 </p><figure id="b0dc5808-75f0-4aa5-8720-5aad24fa198c"><div class="source"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Mental_Health_Consequences_of_Shift_Work_An_Updated_Review.pdf">Mental Health Consequences of Shift Work An Updated Review.pdf</a></div></figure><figure id="5775493f-3bc8-4acf-b879-1c790a06fd25" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled.png"><img style="width:396.99371337890625px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled.png"/></a></figure><p id="8294258f-c25f-484a-a377-538ab4fe6790" class="">교대근무하는 대학병원 간호사에서 교대군의 수면양상이 통계적으로 유의하게 더 좋지 않은 것으로 나타났음</p><figure id="da9a9582-cd69-453b-9d7a-340519fa8bfc"><div class="source"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/1.pdf">교대 근무 형태에 따른 대학병원 간호사의 수면 질 피로 우울 및 건강증진 행위간의 관계.pdf</a></div></figure></li></ol><ol type="a" id="bcd76af2-cb37-4fa1-b58f-018ffabfd272" class="numbered-list" start="2"><li>교대근무자와 대사증후군<ol type="a" id="10c5fcf3-1c4e-4cd4-a859-08d81802a575" class="numbered-list" start="1"><li>교대근무자는 대사증후군의 경향이 높아짐<ol type="a" id="5ad9d620-1f84-4522-b018-8535ba2d43bb" class="numbered-list" start="1"><li>야간 및 교대근무자에게서 대사증후군 및 심혈관 질환, 위장관질환, 정신건강질환 등의 발생이 증가</li></ol><ol type="a" id="1fa62505-09d3-4fef-acf4-bb8e34485d15" class="numbered-list" start="2"><li>특히 남성은 대사증후군 유병율에 기여하는 인자로 확인(교대근무이거나 아니거나 성별인지가 대사증후군과 관련됨)</li></ol><figure id="93381673-7092-4a7d-a321-0a6a20b0063a" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled%201.png"><img style="width:416.9999694824219px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled%201.png"/></a></figure><figure id="f6b74d31-3cfb-4f46-b38f-6e7a4f00b507" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled%202.png"><img style="width:411.99371337890625px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled%202.png"/></a></figure></li></ol><ol type="a" id="136222ee-931e-4d7d-9c2f-c44669eb8b16" class="numbered-list" start="2"><li>한 중국 study에서는 교대근무자에게 이상지질혈증이 발생하는 원인으로 모발 코티솔 검사를 진행함. 해당 연구에서는 교대근무로 인한 HCC 증가가 부분적으로  이상지질혈증을 매개한다고 서술함<figure id="eefb9b5a-aa1c-4085-bc9c-ce4b48adcf6c" class="image"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Clipboard_image_6_41.png"><img style="width:624.074951171875px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Clipboard_image_6_41.png"/></a></figure><ol type="1" id="91bb2521-2d78-476e-9030-3d73b509080b" class="numbered-list" start="1"><li><a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-022-14038-3">https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-022-14038-3</a></li></ol></li></ol></li></ol><ol type="a" id="e874c9a6-ce59-49aa-bc20-ef0c6770ca47" class="numbered-list" start="3"><li>교대근무와 여성건강<ol type="a" id="75c032a3-26d4-43fa-bfad-d253d4a06931" class="numbered-list" start="1"><li>교대근무 간호사는 비교대근무 간호사나 타 직종 근로자보다 월경 전 증상 점수가 높은 것으로 보고되어 있음<figure id="0f7f8484-d0f2-492a-b90c-ac48f7a8a23a" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled%203.png"><img style="width:464px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled%203.png"/></a></figure><figure id="14d01d1d-0b74-4255-a3d6-23837d1d4208"><div class="source"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/2.pdf">교대근무 간호사의 월경 전 증상 영향요인 2차자료 분석 - 수면, 직무 스트레스를 중심으로.pdf</a></div></figure></li></ol><ol type="a" id="8dbb9c1f-241c-4625-8ed8-5f552c2c28e0" class="numbered-list" start="2"><li>이는 교대근무가 코르티솔 농도과 연관이 있다는 가정하에, 스트레스 상황으로 인한 코르티솔이 많이 생합성 되면서 성호르몬의 모체인 prognenlone이 부족해져 호르몬 불균형이 심해지는 것과 연관</li></ol><ol type="a" id="62379217-104f-4e0f-bce9-cdf995b18938" class="numbered-list" start="3"><li>여성 교대근무자의 경우 월경주기 관련 영양제가 도움이 될 수 있음을 시사함</li></ol><ol type="a" id="c7ce75a1-814c-4420-b18f-02b4f0085da4" class="numbered-list" start="4"><li>참고. 위의 논문에서는 수면의 질을 유지하기 위해 수면의 변산성을 줄이는 것이 도움이 된다고 서술<figure id="c75b59b3-7f34-4226-8fb1-20ecb1c01233" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled%204.png"><img style="width:462.99371337890625px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled%204.png"/></a></figure></li></ol><p id="daa3025d-1dea-4a97-a4e1-350dd43550fc" class="">
+</p></li></ol></li></ol><p id="0dd316d3-7879-4008-b182-acad4dce0a9d" class="block-color-pink_background"><strong>3. 교대근무자 특정 정리</strong></p><ol type="1" id="87a9636c-8c82-4884-a093-e1058316775f" class="numbered-list" start="1"><li>수면의 질 하락<ol type="a" id="d8340b83-cfd9-4b7d-9b37-21880cfbb037" class="numbered-list" start="1"><li>일주기 리듬 혼란으로 수면에 들기 어려움(입면장애), 수면의 질 하락</li></ol><ol type="a" id="531f98f0-a04c-47b6-baaf-d29224c1505d" class="numbered-list" start="2"><li>이는 피로감 증가로 이어짐</li></ol><ol type="a" id="8e86b11d-3acd-42ec-91f1-baa0560d2634" class="numbered-list" start="3"><li>담배나 카페인 사용 증가</li></ol><ol type="a" id="74055b75-725f-4331-9bb4-b2dfcc249b93" class="numbered-list" start="4"><li>수면제, 각성제의 사용 증가</li></ol><ol type="a" id="570c6a9f-0690-4842-93b3-e4be7a1b7136" class="numbered-list" start="5"><li>수면의 변산성(길게 잤다가 짧게 잤다가 하는 경우)을 줄이려는 노력 필요</li></ol></li></ol><ol type="1" id="de10a90a-9af1-4aff-afbd-0d7eab9353fc" class="numbered-list" start="2"><li>우울과 불안 증가<ol type="a" id="2f6051a3-3930-485c-a277-bdf0ed78ec3a" class="numbered-list" start="1"><li>이는 대사증후군과도 연관</li></ol></li></ol><ol type="1" id="11be86b0-91f1-4439-9f3c-29cc1f942a57" class="numbered-list" start="3"><li>인지능력 저하</li></ol><ol type="1" id="e6e61f55-2d66-4212-942c-c454ab85d719" class="numbered-list" start="4"><li>스트레스 → 코르티솔 농도 증가</li></ol><ol type="1" id="ca2ce200-86bb-4a51-9705-b7e17ca4e1e9" class="numbered-list" start="5"><li>대사증후군 위험 증가<ol type="a" id="e4f4e6ff-0b2c-4191-a047-3feeacbf0f34" class="numbered-list" start="1"><li>당뇨</li></ol><ol type="a" id="908f4c25-8a94-44a0-95b7-2d8125ed3173" class="numbered-list" start="2"><li>이상지질혈증</li></ol><ol type="a" id="69483944-c91b-4e0f-9c9b-483063126857" class="numbered-list" start="3"><li>심혈관계 질환</li></ol></li></ol><ol type="1" id="7c1f6a36-aba2-41c7-b0ce-bc80483c8478" class="numbered-list" start="6"><li>(경험적) 나쁜 식이습관을 가진 경우 다수<ol type="a" id="07d63a98-6165-42ca-ad06-3bb15cc11df6" class="numbered-list" start="1"><li>정제탄수화물 섭취 증가</li></ol><ol type="a" id="b92ccaec-38a5-467b-b037-d3bb5f774571" class="numbered-list" start="2"><li>인슐린저항성과 연관 → 대사증후군, 만성염증 발생</li></ol></li></ol><ol type="1" id="07363b58-f274-4e9b-b84f-d76e8c945962" class="numbered-list" start="7"><li>(여성의 경우) 월경 관련 불편함 증가<ol type="a" id="6c4b1c8c-09bc-4f84-a024-18029de5421b" class="numbered-list" start="1"><li>월경통, 월경 전 증상</li></ol></li></ol><p id="416e3932-5551-48ea-9a49-5af851e79629" class="">
+</p><p id="696a0d13-b722-4ce6-a1f9-391bca24b541" class="">교대근무자의 특성을 알아두고, 상담에 적용하여 상담자와의 라뽀 형성에 활용 가능</p><p id="2f5a7497-5e4b-405a-a880-5054968945bc" class="">
+</p><p id="9d623529-6d55-42a2-ae26-a3b7d5649c23" class="block-color-pink_background"><strong>4. 교대근무자 추천 영양</strong></p><ol type="1" id="59a72658-371a-4976-98be-ce7cf359e7fe" class="numbered-list" start="1"><li>비타민B컴플렉스</li></ol><ol type="1" id="45bbf11a-8e61-4f2a-860d-e97168d1d14b" class="numbered-list" start="2"><li>마그네슘</li></ol><ol type="1" id="c23ef649-4c2a-4bf2-bda8-36cfe04407dc" class="numbered-list" start="3"><li>칼마디K</li></ol><ol type="1" id="46673a27-a241-451d-ab3f-a3293baede88" class="numbered-list" start="4"><li>비타민D</li></ol><ol type="1" id="63613725-d1b7-44b7-a99c-011fd3414042" class="numbered-list" start="5"><li>복합미네랄</li></ol><ol type="1" id="8fe1e226-1a4a-4b78-b459-0b8bb62074f8" class="numbered-list" start="6"><li>오메가3</li></ol><hr id="b66b37a6-b406-483a-91b9-d401ba1fd317"/><ol type="1" id="764cbe37-6bf5-49da-9060-f0e8ce710b52" class="numbered-list" start="1"><li>로사테아닌(불안, 우울, 스트레스 대항)</li></ol><ol type="1" id="40c1e2e9-4542-4acb-b60a-3b7a82945e72" class="numbered-list" start="2"><li>아쉬아간다(수면의 질)</li></ol><ol type="1" id="c3bc8069-7065-426a-913e-f5563c5a2bc7" class="numbered-list" start="3"><li>미강주정추출물(수면의 질)</li></ol><ol type="1" id="980dee2e-32a9-47c7-8342-46f23765986f" class="numbered-list" start="4"><li>항산화제<ol type="a" id="0e163412-ef72-4498-b79a-babd49f42662" class="numbered-list" start="1"><li>비타민C, 코큐텐 등</li></ol></li></ol><ol type="1" id="d07bf921-0eb6-4676-aad1-8fa440b0c782" class="numbered-list" start="5"><li>월경관련<ol type="a" id="c58be427-e867-4868-ad3f-02310df62733" class="numbered-list" start="1"><li>GLA, 이노시톨, 설포라판, 피크노제놀…</li></ol></li></ol><hr id="3fb0abfc-774f-45ab-ba22-0dd5e000a32e"/><p id="989af14b-16e6-4f98-8848-bb9e4ef65fa4" class="">복용방법 : 기상 후 첫 식사 후 복용, 든든한 식후 복용, 미강주정추출물의 경우 잠들기 1시간 전 복용</p><p id="a93b7f81-a275-403d-92a7-03c6131efd11" class="">
+</p><p id="8e130096-eaa4-4f34-a199-ad8eaf5bbbdf" class="block-color-pink_background"><strong>5. 교대근무자 추천 생활습관</strong></p><p id="fa75dd6c-d059-4dfa-81ad-8804abacfb76" class="">
+</p><figure id="cf549fb6-b5e6-4d25-893a-1d73d9b75b9f" class="image"><a href="5%20%E1%84%80%E1%85%AD%E1%84%83%E1%85%A2%E1%84%80%E1%85%B3%E1%86%AB%E1%84%86%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%2065d9fd30717641019973cb6f5fd3b2af/Untitled%205.png"><img style="width:424.9687194824219px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/Untitled%205.png"/></a></figure><figure id="8fe8c405-fd9c-4c13-a62d-58775b9ce5fc" class="image"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/9.34.56.png"></a><img style="width:1222px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/9.34.56.png"/></figure><figure id="16995e31-d33b-47d5-92e1-88897e432982" class="image"><a href="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/9.35.24.png"><img style="width:1222px" src="5 교대근무자의 추천 영양요법 65d9fd30717641019973cb6f5fd3b2af/9.35.24.png"/></a></figure><p id="31a83290-7727-44b1-8237-00f6e98f424b" class=""><a href="http://www.healtip.co.kr/news/articleView.html?idxno=2956#rs">http://www.healtip.co.kr/news/articleView.html?idxno=2956#rs</a></p><p id="7b7c67cf-dfb8-4b05-8e78-cd3134aa7e64" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
