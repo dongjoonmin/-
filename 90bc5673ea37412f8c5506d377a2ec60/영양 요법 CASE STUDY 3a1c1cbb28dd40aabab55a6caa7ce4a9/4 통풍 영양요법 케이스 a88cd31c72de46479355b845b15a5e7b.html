@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>4. 통풍 영양요법 케이스</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a88cd31c-72de-4647-9355-b845b15a5e7b" class="page sans"><header><h1 class="page-title">4. 통풍 영양요법 케이스</h1><p class="page-description"></p></header><div class="page-body"><p id="30dce695-a76a-4db4-9ba2-0b0993d0a602" class="block-color-pink_background"><strong>1. 고객 히스토리</strong></p><ul id="8146a817-92df-42e8-9aca-e205871aecc8" class="block-color-default bulleted-list"><li style="list-style-type:disc"><strong>상담일</strong>: 24.04.03</li></ul><ul id="1bcb9efa-8354-459e-9f2c-407d6ee61813" class="bulleted-list"><li style="list-style-type:disc"><strong>상담 유형</strong>: 오프라인 스토어(사전예약)</li></ul><ul id="5827f72b-0d6c-4f7b-b194-736a89b3a751" class="bulleted-list"><li style="list-style-type:disc"><strong>고객 특이사항</strong><ul id="2960b10f-f199-4cfd-857e-773b5bdce6d5" class="bulleted-list"><li style="list-style-type:circle">40대 남성</li></ul><ul id="8b552912-bc40-499e-85dc-49b03a6bee70" class="bulleted-list"><li style="list-style-type:circle">복용중인 의약품:  페브릭정, 콜킨정, NSAIDs</li></ul><ul id="be5babed-f5d1-4d58-9a83-b36ed8b975a8" class="bulleted-list"><li style="list-style-type:circle">섭취중인 영양제: 유산균, 홍삼, 이뮨베라(알로에), 비타민 D 주사(주기적으로 맞음)</li></ul><p id="096cd19a-f38e-410e-b03c-9edacfd82115" class="">
+</p></li></ul><div id="36260a8d-efda-4818-82aa-74515622fbc6" class="column-list"><div id="5c50d4f3-3d9e-40dd-b9c8-414c64a4a726" style="width:50%" class="column"><ul id="90b68325-2102-4ab7-a7d2-df0b2340adb2" class="bulleted-list"><li style="list-style-type:disc"><strong>건강설문 결과</strong><figure id="92b42787-1085-4b29-a59c-bf00e051a983" class="image"><a href="4%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%91%E1%85%AE%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%20a88cd31c72de46479355b845b15a5e7b/3b7e8222-4101-4c94-81a0-568656370c3d.png"><img style="width:336px" src="4 통풍 영양요법 케이스 a88cd31c72de46479355b845b15a5e7b/3b7e8222-4101-4c94-81a0-568656370c3d.png"/></a></figure><p id="22233a33-1a1a-48f2-9707-1cbf5fa7f506" class="">
+</p></li></ul></div><div id="ed712d8a-84e2-40bf-b9b0-b1ae4bc3ffb0" style="width:50%" class="column"><figure id="0df07fe1-42fd-4917-bd98-98240313605f" class="image"><a href="4 통풍 영양요법 케이스 a88cd31c72de46479355b845b15a5e7b/34f8f8b7-9099-40a5-a145-c49abd5af441.png"><img style="width:384px" src="4 통풍 영양요법 케이스 a88cd31c72de46479355b845b15a5e7b/34f8f8b7-9099-40a5-a145-c49abd5af441.png"/></a></figure></div></div><ul id="de942daa-cdff-4946-bcaf-b35ae8efce49" class="bulleted-list"><li style="list-style-type:disc"><strong>건강 유형</strong><p id="081290a1-50f0-4257-8bd7-7f97143f761f" class="">1) 수면  2) 스트레스  3) 피로&amp;면역</p><p id="72c0fa64-9ca2-41a0-9b16-8b5bc1c78452" class="">
+</p></li></ul><ul id="22e2c0df-8478-4cfc-82e1-e91b196cfd08" class="bulleted-list"><li style="list-style-type:disc"><strong>요청사항</strong><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="58e013ee-26fb-4fe9-a75e-88a99fa283b5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">최근 대상포진 이력 - 면역력을 중점적으로 관리하고 싶음<br/>통풍에 도움되는 영양제 추천 (비타민 B는 통풍에 안 좋다고 들어서 제외 원함)<br/><p id="75c07606-a329-48fe-afac-da7c898b0cd3" class="">검진결과 - 혈중 중성지방 수치 높음</p><p id="ca16374f-d200-4f6c-878b-fbee5ca22b2a" class="">생활습관 - 음주 잦은 편</p><p id="47c4a078-a43e-4c6d-830f-b71bbb48f085" class="">기타: 커큐민 문의</p></div></figure><p id="4ec2e24f-4914-41b2-aeb3-0fb4ece3e128" class="">
+</p><p id="7d537a49-3bc6-4a84-ac1d-74b9370b1f4c" class="">
+</p></li></ul><p id="a1ce8f77-f682-4752-ada0-de129d9318d8" class="block-color-pink_background"><strong>2. 영양제 구성</strong></p><p id="0e3cd12c-0ac1-4278-8f05-261772bad087" class="block-color-default">
+</p><p id="5b330b7b-8f7d-4d69-916d-a93d7044a8b3" class="block-color-default"><strong>💊 최종 영양제 구성</strong></p><p id="bd8282d8-87d9-43ce-b4b1-6a61d0b34dd4" class="block-color-gray_background">[오전] 비타민C, 복합미네랄, 코큐텐+, 마그네슘B<br/>[오후] 오메가3<br/>[단품] 피토틱스 패밀리<br/></p><p id="1bbc1c45-090c-46a8-afb4-808244be80b3" class="">
+</p><p id="7d29a05a-911e-4832-b26b-e2aa4441fce9" class=""><strong>💊 추천 영양제</strong></p><ul id="242cd426-def5-4377-a3ac-09896e3b952e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>면역력</strong></mark><ul id="34add041-61dc-42d2-ae2c-fda81caaa854" class="bulleted-list"><li style="list-style-type:circle"><strong>비타민C</strong> (500mg) - 항산화/면역</li></ul><ul id="ac813bc6-e1b2-4bb8-91e3-d7cab0f44167" class="bulleted-list"><li style="list-style-type:circle"><strong>복합미네랄</strong>(아연) - 평소 식단 또는 음주로 인해 소실되어 부족해질 수 있는 미네랄 보충</li></ul><ul id="64d18f96-e209-42ee-807e-5bfaf1f0d0ee" class="bulleted-list"><li style="list-style-type:circle"><strong>오메가3</strong> - 혈중 중성지질 개선 및 혈액순환, 항염증<ul id="7f9238c7-e3c0-4fa5-8631-6d61b9debf84" class="bulleted-list"><li style="list-style-type:square">최근 건강검진 시 중성지질 수치 높아 관리 필요 &amp; 문의한 커큐민 영양제 대신 추천</li></ul></li></ul><ul id="9261d630-4bee-4871-a8d4-4d309b712a34" class="bulleted-list"><li style="list-style-type:circle"><strong>피토틱스 패밀리</strong> - 고객 니즈(유산균 단독 제품) 반영<ul id="449aad04-747d-43df-9a8f-d4d4cd6759fd" class="bulleted-list"><li style="list-style-type:square">‘리튠 프로바이오틱스 듀얼 프리미엄’ 제품 도입 전, 기존 가루형 단품제품으로 추천</li></ul></li></ul></li></ul><ul id="34d2166b-0435-4f39-8315-877371bee4c9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>피로 및 스트레스</strong></mark><ul id="32179869-e531-4567-830c-226d4ef7cc17" class="bulleted-list"><li style="list-style-type:circle"><strong>코큐텐</strong> - 항산화, 체내 에너지 합성</li></ul><ul id="4f14d71a-fd09-4995-bf45-f087ab92fad2" class="bulleted-list"><li style="list-style-type:circle"><strong>마그네슘</strong> - 신경/근육 이완을 통해 긴장 및 스트레스 완화, 숙면에 도</li></ul></li></ul><ul id="8057676f-211f-4420-8102-e97f33c0d853" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>간건강</strong></mark><ul id="c6504a97-2b6d-442b-9a02-c3df66ac1b4b" class="bulleted-list"><li style="list-style-type:circle"><strong>밀크씨슬</strong> - 잦은 음주로 간건강 관리 위해 추천<ul id="d6b78977-f366-4dc3-9a48-237da4823480" class="bulleted-list"><li style="list-style-type:square">고객 요청으로 제외: 통풍약과 상호작용 걱정하며 제외 원함</li></ul></li></ul></li></ul><p id="4d21f750-4a68-491e-a099-d28d507b122e" class="">
+</p><p id="7814db65-c2ab-4524-9240-fdc98e2a3254" class="">
+</p><p id="f7b89751-5a60-4756-abd0-c3fdac208a5b" class="block-color-pink_background"><strong>3. 고객 질의응답 - 통풍 관련 영양제</strong></p><p id="00abeaa3-3682-4034-9b7a-f5671e4e02ba" class=""><strong>1. 통풍 관련 영양제</strong></p><p id="c8da0ebb-6197-427b-84bc-749fadd18d70" class=""><mark class="highlight-yellow_background"><strong> 1) 비타민</strong></mark></p><ul id="20594be2-653f-45dd-ad4a-33b6c89a6ae8" class="bulleted-list"><li style="list-style-type:disc"><strong>비타민 B3</strong><ul id="bbe5684f-3a67-4e53-871b-bf1218a48e1e" class="bulleted-list"><li style="list-style-type:circle">나이아신 vs 나이아신아미드</li></ul><ul id="ac4f0630-48b9-4f89-8c9d-c87426938020" class="bulleted-list"><li style="list-style-type:circle">고함량 나이아신(1g 이상) 섭취 시 요산 배출이 감소하였다는 연구 O<figure id="b71b62e2-34b7-43d2-919a-b36ab5611bfe"><div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/23948546/">https://pubmed.ncbi.nlm.nih.gov/23948546/</a></div></figure></li></ul><ul id="2b121497-a35e-4f74-9a85-e12acdbe5020" class="bulleted-list"><li style="list-style-type:circle">영양제에는 보통 나이아신아미드 형태로 함유</li></ul></li></ul><p id="eac2ba57-6095-4428-8073-db26bc8515ae" class="">
+</p><ul id="6c9f62a3-d3cc-41cb-80f7-dccb614ed500" class="bulleted-list"><li style="list-style-type:disc"><strong>비타민 B12</strong><ul id="2ea4ea0f-47d8-4bf7-983d-48f350c807e9" class="bulleted-list"><li style="list-style-type:circle">콜킨정(colchicine) 복용 시 B12의 흡수가 가역적으로 억제되어 체내 B12가 부족해질 수 있음</li></ul></li></ul><p id="a7edc789-6b81-49b4-95c1-11f5e9ce6204" class="">               → 드럭머거 영양소</p><p id="d381e5f6-0039-4883-87fd-d8c84b6424ab" class="">
+</p><ul id="63e75407-b516-45c0-9283-c99458f3336c" class="bulleted-list"><li style="list-style-type:disc"><strong>비타민C</strong><ul id="c1bdfc6b-30e5-4b99-83cc-9592c804bc15" class="bulleted-list"><li style="list-style-type:circle">500mg/d 섭취 시, 요산 배출 도움</li></ul><ul id="c20d591f-15d6-4426-bdd6-a639c06513ca" class="bulleted-list"><li style="list-style-type:circle">3g/d 이상 지속적 섭취 시, 요산 결석 가능성<figure id="8a4e6bb6-5988-4757-81ed-0e6d656b2d02"><div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/21671418/">https://pubmed.ncbi.nlm.nih.gov/21671418/</a></div></figure></li></ul></li></ul><p id="714926b8-3b07-47ad-871b-2de7ecb94d8e" class="">
+</p><p id="277e012d-d99a-46a3-8e06-7e5a4063d54a" class="">⇒ 피로감 개선/전반적인 영양소 보충을 위해 종합비타민 추천</p><p id="f2171b4b-899a-40e0-ba2b-81c6f02661f4" class="">but, 고객은 통풍에 좋지 않다고 생각하여 비타민B군 포함 영양제 제외 원함.</p><p id="0de28fa9-d424-4f3b-95f5-6b3bb81e0ddc" class="">비타민 C 500mg으로만 구성 </p><p id="169ed638-a4e7-4d3d-8bc2-f8b9743e54f4" class="">
+</p><p id="17d5f2fe-3ea8-41cc-8bb7-668e82385391" class=""><mark class="highlight-yellow_background"> </mark><mark class="highlight-yellow_background"><strong>2) 오메가3</strong></mark></p><ul id="1162d6c4-5740-470b-ba65-3f92768514ff" class="bulleted-list"><li style="list-style-type:disc">염증반응에 도움을 줄 수 있음</li></ul><ul id="437ea7ff-706c-4509-b2f3-3603bde128eb" class="bulleted-list"><li style="list-style-type:disc">고객이 본인의 중성지방 수치 높은편이라고 언급, 함께 섭취하는 것 추천</li></ul><p id="d918eb89-283c-451a-b7e0-336bd227e2da" class=""> </p><p id="856e985f-7fed-48f5-8486-6987a73039ed" class=""><mark class="highlight-yellow_background"><strong>3) 밀크씨슬</strong></mark></p><ul id="4b4d466f-aa3e-45c0-80f8-f96b52db11ef" class="bulleted-list"><li style="list-style-type:disc">요산: 간에서 생성되는 대사산물</li></ul><ul id="dcfbe534-b0ad-4103-b7cb-e0b165b4bb58" class="bulleted-list"><li style="list-style-type:disc">간기능과 요산수치가 상관결과가 있다는 연구 O</li></ul><p id="7243fc97-a4a2-4553-b0ec-9fb47f2c742a" class="">       혈중 요산수치가 높을수록 ALT, GGT 상승할 확률 높음</p><figure id="eb5ae0bc-5b52-4ba6-906a-791cbef92112"><div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/20683957/">https://pubmed.ncbi.nlm.nih.gov/20683957/</a></div></figure><p id="b179b209-37f3-4070-a7a3-adac2d280c3c" class="">→ 잦은 음주로 간건강이 걱정된다면 영양제 구성에 포함 추천</p><p id="ac73c648-a936-42d2-bfaf-d8e685df226c" class="">
+</p><p id="9d9defba-d757-4598-97e9-31244fdf2335" class="">
+</p><p id="23187c7d-0a96-4b25-bff1-3d5f778f6b05" class=""><strong>2. 기타 건강지침</strong></p><p id="c189d267-736e-41ef-b2c4-618c1611ab7d" class=""><strong>1) 통풍 시 주의가 필요한 영양제</strong></p><ul id="6f39f54d-2f5f-407e-b0ac-0aff7fb95daa" class="bulleted-list"><li style="list-style-type:disc">고함량 비타민 C (메가도스)</li></ul><ul id="7b697278-e22b-45a2-a940-15dd9fb7ccc4" class="bulleted-list"><li style="list-style-type:disc">맥주효모: ‘퓨린’ 함유. 통풍 환자는 요산 배설능력이 떨어져 있어 통풍이 악화될 수 있음</li></ul><p id="8b831c83-4018-442e-9a0f-a3121f7e6133" class="">
+</p><p id="4e061d7b-ea3a-46d4-a126-c9c0c74ca655" class=""><strong>2) 식습관 및 생활습관</strong></p><ul id="f5462c34-7a35-48da-9ead-20ec38756640" class="bulleted-list"><li style="list-style-type:disc">충분한 수분섭취 - 신체 대사를 높이고, 소변으로 요산을 배출하는데 도움</li></ul><ul id="afcd69fe-cea0-4355-be9a-8ec7d2b40ccd" class="bulleted-list"><li style="list-style-type:disc">식단 조절 - 고단백, 고칼로리 음식은 피하고(요산을 생성하는 퓨린 함유하므로 주의)</li></ul><ul id="7b36da0f-ba6c-40a1-96aa-0f18e477de86" class="bulleted-list"><li style="list-style-type:disc">과일, 채소, 해조류 섭취하기</li></ul><ul id="7f5a4d12-733e-420e-84f5-f243a9f6af14" class="bulleted-list"><li style="list-style-type:disc">잦은 음주 또는 과음 피하기</li></ul><ul id="8e5a0eaa-30e7-492c-bbdf-ae15bc3ec273" class="bulleted-list"><li style="list-style-type:disc">규칙적인 운동으로 적정 체중 관리</li></ul><p id="a4981bfc-a94c-456b-be69-32e803b8d1be" class="">⇒ 식단 조절, 운동 병행하여 지속적인 건강 관리 필요함 강조</p><p id="6f8486c9-bce4-41bf-a1e4-18542a168323" class="">
+</p><p id="77874ace-76aa-453f-898c-2afd628b2ee0" class="">
+</p><p id="053bd2df-e16c-45d2-af6d-5fe4f6644eb3" class=""><strong>3. 영양제 수령 이후 추가 문의(유선)</strong></p><ul id="ba795720-c6c3-4c64-b7f4-24ad9d79aac9" class="bulleted-list"><li style="list-style-type:disc">4/16 영양제 관련 추가 문의</li></ul><p id="ffda510c-741f-44e7-900e-6258439c4618" class="">Q. 통풍약 먹는데 영양제 먹어도 되나요?</p><p id="d00bb04d-1bf1-4fac-9c7f-dd12194ab2e4" class="">A. 영양소 구성이므로 섭취해도 됩니다.</p><p id="a76cdbfb-b5b9-4701-a2b9-431b63344268" class="">
+</p><p id="ae3602d2-3444-4919-aefc-c835bcb47e7c" class="">  </p><p id="b4a780cf-1ab7-4ed4-9117-dee275a0f3a0" class="">
+</p><p id="b7fdbb41-2262-4a07-bfeb-87b20fa9c7ce" class="block-color-pink_background"><strong>4. 참고</strong></p><p id="e22a240c-119e-49a2-9f3b-6f384af20178" class="">
+</p><p id="de90a78a-7e21-411f-b3a9-269907d42089" class="">
+</p><p id="16f37e3c-7c58-43db-bba4-60adc2c1565a" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
